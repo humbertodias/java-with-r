@@ -6,7 +6,6 @@
 * Java 8+
 * rJava
 
-
 ```
 apt install r-cran-rjava
 ```
@@ -53,3 +52,5 @@ mvn test
 [R and Java](https://www.slideshare.net/rcuprak/r-and-javav12)
 
 [Calling R from java using JRI](http://www.cnblogs.com/mavlarn/archive/2012/12/24/2831688.html)
+
+[Graphs in R](https://www.harding.edu/fmccown/r/)

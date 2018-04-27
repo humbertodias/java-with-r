@@ -4,6 +4,7 @@ package com.r;
 import org.junit.Test;
 import org.rosuda.JRI.REXP;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
@@ -63,5 +64,14 @@ public class RTest
         REXP rexp = RUtil.evaluate("sqrt(36)");
         assertEquals(expected, rexp.asDouble(), 0);
     }
+
+    @Test
+    public void EvalResourceGraphPNGTest() throws IOException {
+        InputStream inputStream = RUtil.class.getResourceAsStream("/cars_trucks.R");
+        RUtil.evaluate(inputStream);
+        File pngFile = new File("/tmp/cars_trucks.png");
+        assertTrue(pngFile.exists() && pngFile.length() > 0);
+    }
+
 
 }
