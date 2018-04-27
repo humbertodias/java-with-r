@@ -3,7 +3,7 @@
 
 # Requires
 
-	* Java 8+
+* Java 8+
 
 
 ```
@@ -41,4 +41,4 @@ Loading required package: rJava
 
 # References
 
-(R in Java)[http://www.oracle.com/technetwork/java/jvmls2013vitek-2013524.pdf]
+[R in Java](http://www.oracle.com/technetwork/java/jvmls2013vitek-2013524.pdf)
