@@ -1,9 +1,10 @@
-# R in Java
+# Java with R
 
 
 # Requires
 
 * Java 8+
+* rJava
 
 
 ```
@@ -23,7 +24,6 @@ Install
 install.packages("rJava")
 ```
 
-
 Loaded
 
 ```
@@ -34,16 +34,17 @@ Loading required package: rJava
 Env Variables
 
 ```
-export R_HOME=/usr/local/lib/R
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$R_HOME/site-library/rJava/jri
+export R_HOME=/usr/lib/R
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/R/site-library/rJava/jri
 ```
 
 
+Test
 
 ```
-.jinit()
- v <- new (J("java.lang.String"), "Hello World!")
+mvn test
 ```
+
 
 
 

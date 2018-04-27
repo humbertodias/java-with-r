@@ -3,10 +3,7 @@ package com.r;
 import org.rosuda.JRI.REXP;
 import org.rosuda.JRI.Rengine;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,9 +27,9 @@ public final class RUtil {
             throw new RuntimeException("R_HOME empty env variable");
         }
 
-        String javaLibraryPath = System.getProperty("java.library.path") + "";
+        String javaLibraryPath = System.getProperty("java.library.path");
         if (javaLibraryPath.isEmpty() || !javaLibraryPath.contains("jri")) {
-            throw new RuntimeException("java.library.path empty or does not contain $R_HOME/site-library/rJava/jri");
+            throw new RuntimeException("java.library.path does not contain -Djava.library.path=$R_HOME/site-library/rJava/jri");
         }
 
         if (!Rengine.versionCheck()) {
