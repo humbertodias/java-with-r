@@ -1,9 +1,9 @@
-# Java with R
+# R in Java
 
 
 # Requires
 
-* Java 8+
+	* Java 8+
 
 
 ```
@@ -27,7 +27,7 @@ install.packages("rJava")
 Loaded
 
 ```
-require("rJava")
+require(rJava)
 Loading required package: rJava
 ```
 
@@ -37,3 +37,8 @@ Loading required package: rJava
  v <- new (J("java.lang.String"), "Hello World!")
 ```
 
+
+
+# References
+
+(R in Java)[http://www.oracle.com/technetwork/java/jvmls2013vitek-2013524.pdf]
