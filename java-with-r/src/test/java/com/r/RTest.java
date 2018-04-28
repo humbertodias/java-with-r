@@ -10,9 +10,7 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 /**
  * Unit test for simple App.
@@ -78,5 +76,24 @@ public class RTest
         assertTrue(pngFile.exists() && pngFile.length() > 0);
     }
 
+    @Test
+    public void EvalSQLiteTest() throws IOException {
+        String expected = "[STRING* (\"Hello\", \"World\")]";
+        InputStream inputStream = RUtil.class.getResourceAsStream("/sqlite.R");
+        List<REXP> rexps = RUtil.evaluate(inputStream);
+        REXP lastExp = rexps.get(rexps.size()-1);
+        assertEquals(expected, lastExp.asVector().get(0).toString());
+    }
+
+
+    //@Test
+    // TODO
+    public void EvalH2Test() throws IOException {
+        String expected = "[STRING* (\"Hello\", \"World\")]";
+        InputStream inputStream = RUtil.class.getResourceAsStream("/h2.R");
+        List<REXP> rexps = RUtil.evaluate(inputStream);
+        REXP lastExp = rexps.get(rexps.size()-1);
+        assertEquals(expected, lastExp.asVector().get(0).toString());
+    }
 
 }

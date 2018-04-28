@@ -54,6 +54,7 @@ print(tmpDir)
 ```
 
 
+
 # RStudio
 
 Ubuntu 18.04 tested
@@ -78,6 +79,31 @@ sudo dpkg -i rstudio-1.1.447-amd64.deb
 ```
 
 
+# Database
+
+H2
+
+```
+install.packages("RH2")
+```
+
+```
+library(RH2)
+con <- dbConnect(H2())
+s <- 'create table tt("id" int primary key, "name" varchar(255))'
+dbSendUpdate(con, s)
+dbSendUpdate(con, "insert into tt values(1, 'Hello')")
+dbSendUpdate(con, "insert into tt values(2, 'World')")
+dbGetQuery(con, "select * from tt")
+```
+
+```
+  id  name
+1  1 Hello
+2  2 World
+```
+
+
 
 # References
 
@@ -86,4 +112,6 @@ sudo dpkg -i rstudio-1.1.447-amd64.deb
 [jcall](https://www.rforge.net/doc/packages/rJava/jcall.html)
 
 [RStudio Install](https://linuxconfig.org/install-r-on-ubuntu-18-04-bionic-beaver-linux)
+
+[RH2](https://cran.r-project.org/web/packages/RH2/index.html)
 
