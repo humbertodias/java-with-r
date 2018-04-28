@@ -3,7 +3,11 @@ package com.r;
 import org.rosuda.JRI.REXP;
 import org.rosuda.JRI.Rengine;
 
-import java.io.*;
+import java.io.File;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +19,7 @@ public final class RUtil {
     private static final String R_HOME_EMPTY_ENV_VARIABLE = "R_HOME empty env variable";
     private static final String JAVA_LIBRARY_PATH_WITHOUT_JRI = "java.library.path does not contain -Djava.library.path=$R_HOME/site-library/rJava/jri";
     private static final String JAVA_VERSION_MISMATCH = "Java version mismatch.";
+    private static final String CANNOT_LOAD_R = "Cannot load R";
 
     /**
      * Singleton.
@@ -59,7 +64,7 @@ public final class RUtil {
         String[] args = {"--vanilla"};
         Rengine re = new Rengine(args, false, null);
         if (!re.waitForR()) {
-            throw new RuntimeException("Cannot load R");
+            throw new RuntimeException(CANNOT_LOAD_R);
         }
 
         return re;
