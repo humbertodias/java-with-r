@@ -34,11 +34,27 @@ Loading required package: rJava
 
 ```
 .jinit()
- v <- new (J("java.lang.String"), "Hello World!")
+v <- new (J("java.lang.String"), "Hello World!")
 ```
 
 
+```
+print(v)
+[1] "Java-Object{Hello World!}"
+```
+
+Getting tmpDir from Java
+```
+tmpDir <- .jcall("java/lang/System","S","getProperty","java.io.tmpdir")
+```
+
+```
+print(tmpDir)
+[1] "/tmp"
+```
 
 # References
 
 [R in Java](http://www.oracle.com/technetwork/java/jvmls2013vitek-2013524.pdf)
+
+[jcall](https://www.rforge.net/doc/packages/rJava/jcall.html)

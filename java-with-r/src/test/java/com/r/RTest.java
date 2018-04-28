@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
@@ -68,8 +69,12 @@ public class RTest
     @Test
     public void EvalResourceGraphPNGTest() throws IOException {
         InputStream inputStream = RUtil.class.getResourceAsStream("/cars_trucks.R");
-        RUtil.evaluate(inputStream);
-        File pngFile = new File("/tmp/cars_trucks.png");
+        List<REXP> evaluation = RUtil.evaluate(inputStream);
+
+        Optional<REXP> firstEval = evaluation.stream().findFirst();
+        String currentDir = firstEval.get().asString();
+
+        File pngFile = new File(currentDir,"cars_trucks.png");
         assertTrue(pngFile.exists() && pngFile.length() > 0);
     }
 
