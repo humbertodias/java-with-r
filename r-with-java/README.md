@@ -85,7 +85,5 @@ sudo dpkg -i rstudio-1.1.447-amd64.deb
 
 [jcall](https://www.rforge.net/doc/packages/rJava/jcall.html)
 
-[RStudio](https://www.rstudio.com/products/rstudio/download/#download)
-
 [RStudio Install](https://linuxconfig.org/install-r-on-ubuntu-18-04-bionic-beaver-linux)
 

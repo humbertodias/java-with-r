@@ -27,7 +27,8 @@ public final class RUtil {
             throw new RuntimeException("R_HOME empty env variable");
         }
 
-        String javaLibraryPath = System.getProperty("java.library.path");
+        String envLDLibraryPath = System.getenv("LD_LIBRARY_PATH");
+        String javaLibraryPath = System.getProperty("java.library.path") + File.pathSeparatorChar + envLDLibraryPath;
         if (javaLibraryPath.isEmpty() || !javaLibraryPath.contains("jri")) {
             throw new RuntimeException("java.library.path does not contain -Djava.library.path=$R_HOME/site-library/rJava/jri");
         }
