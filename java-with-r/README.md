@@ -4,12 +4,12 @@
 # Requires
 
 * Java 8+
-* rJava
+* R package rJava
+* R packages for test: sqldf, RH2
 
 ```
 apt install r-cran-rjava
 ```
-
 
 As root
 
@@ -17,15 +17,10 @@ As root
 R CMD javareconf
 ```
 
-Inside REPL
-
-```
-R
-```
-
 Install
 
 ```
+R
 install.packages("rJava")
 ```
 
@@ -41,13 +36,6 @@ Finally, should return
 Loading required package: rJava
 ```
 
-For JUnit tests (slow)
-
-```
-install.packages('sqldf')
-install.packages('RH2')
-```
-
 Exiting
 
 ```
@@ -57,8 +45,6 @@ or
 
 CTRL+R
 ```
-
-
 
 Env Variables
 
@@ -70,12 +56,20 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$R_HOME/site-library/rJava/jri
 
 Test
 
+
+R Packages
+
+```
+R
+install.packages('sqldf')
+install.packages('RH2')
+```
+
+JUnit
+
 ```
 mvn test
 ```
-
-
-
 
 # References
 
