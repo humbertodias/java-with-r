@@ -45,6 +45,7 @@ For JUnit tests (slow)
 
 ```
 install.packages('sqldf')
+install.packages('RH2')
 ```
 
 Exiting

@@ -95,7 +95,7 @@ public final class RUtil {
      * @throws IOException IO
      */
     private static List<String> toLines(final InputStream inputStream) throws IOException {
-        List<String> lines = new ArrayList();
+        List<String> lines = new ArrayList<>();
         try (BufferedReader reader =  new BufferedReader(new InputStreamReader(inputStream))) {
             reader.lines().forEach(line -> lines.add(line));
         }

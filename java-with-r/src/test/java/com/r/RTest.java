@@ -88,8 +88,7 @@ public class RTest
     }
 
 
-    //@Test
-    // TODO
+    @Test
     public void evalH2Test() throws IOException {
         String expected = "[STRING* (\"Hello\", \"World\")]";
         InputStream inputStream = RUtil.class.getResourceAsStream("/h2.R");
