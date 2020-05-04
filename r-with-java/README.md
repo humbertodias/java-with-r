@@ -31,12 +31,10 @@ require(rJava)
 Loading required package: rJava
 ```
 
-
 ```
 .jinit()
 v <- new (J("java.lang.String"), "Hello World!")
 ```
-
 
 ```
 print(v)
@@ -53,31 +51,28 @@ print(tmpDir)
 [1] "/tmp"
 ```
 
-
-
 # RStudio
 
-Ubuntu 18.04 tested
+Ubuntu 20.04 tested
+
+Key
 
 ```
-# Removing corrupted install
+gpg --keyserver keys.gnupg.net --recv-keys 3F32EE77E331692F
 
-sudo apt-get purge rstudio # If it is not installed there is no problem
-
-# Getting the files needed
-
-wget https://download1.rstudio.org/rstudio-1.1.447-amd64.deb
-wget http://ubuntu.mirrors.tds.net/ubuntu/pool/universe/g/gstreamer0.10/libgstreamer0.10-0_0.10.36-1.5ubuntu1_amd64.deb
-wget http://security.ubuntu.com/ubuntu/pool/main/g/gst-plugins-base0.10/libgstreamer-plugins-base0.10-0_0.10.36-1ubuntu0.2_amd64.deb
-
-# Installing deppendencies
-
-sudo apt-get install r-base r-base-dev
-sudo dpkg -i libgstreamer0.10-0_0.10.36-1.5ubuntu1_amd64.deb
-sudo dpkg -i libgstreamer-plugins-base0.10-0_0.10.36-1ubuntu0.2_amd64.deb
-sudo dpkg -i rstudio-1.1.447-amd64.deb
+sudo apt install r-base libclang-dev
+wget https://download1.rstudio.org/desktop/bionic/amd64/rstudio-1.2.5042-amd64.deb
+sudo dpkg -i rstudio-1.2.5042-amd64.deb
+rm rstudio*.deb
 ```
 
+Then
+
+```
+rstudio
+```
+
+![](rstudio.png)
 
 # Database
 
@@ -106,6 +101,8 @@ dbGetQuery(con, "select * from tt")
 
 
 # References
+
+[RStudio](https://rstudio.com/products/rstudio/download/)
 
 [R in Java](http://www.oracle.com/technetwork/java/jvmls2013vitek-2013524.pdf)
 
