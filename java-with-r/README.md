@@ -17,6 +17,12 @@ As root
 R CMD javareconf
 ```
 
+Inside REPL
+
+```
+R
+```
+
 Install
 
 ```
@@ -27,14 +33,37 @@ Loaded
 
 ```
 require(rJava)
+```
+
+Finally, should return
+
+```
 Loading required package: rJava
 ```
+
+For JUnit tests (slow)
+
+```
+install.packages('sqldf')
+```
+
+Exiting
+
+```
+q()
+
+or
+
+CTRL+R
+```
+
+
 
 Env Variables
 
 ```
 export R_HOME=/usr/lib/R
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/R/site-library/rJava/jri
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$R_HOME/site-library/rJava/jri
 ```
 
 
